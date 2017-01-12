@@ -44,6 +44,8 @@ class MonsterImg: UIImageView {
         self.animationRepeatCount = 1
         self.animationDuration = 0.8
         self.startAnimating()
+        self.image = UIImage(named: "\(characterName)_dead5")
+
     }
     
 }

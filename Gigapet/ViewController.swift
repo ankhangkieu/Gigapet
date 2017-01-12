@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.characterHappy), name: "onTargetDropped", object: nil)
+        restart()
     }
     
     func startTimer(){
@@ -76,6 +77,7 @@ class ViewController: UIViewController {
     func changeGameState(){
         if !monsterHappy{
             lifeloss += 1
+            skullSound.play()
             if lifeloss == 1{
                 skull1.alpha = OPAGUE
             }
@@ -86,7 +88,12 @@ class ViewController: UIViewController {
                 skull3.alpha = OPAGUE
             }
             if lifeloss >= MAXLIFE{
-                restart()
+                characterImg.playDead()
+                deathSound.play()
+                if timer != nil{
+                    timer.invalidate()
+                }
+                timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.restart), userInfo: nil, repeats: false)
             }
         }
         let rand = arc4random_uniform(3)
@@ -117,9 +124,14 @@ class ViewController: UIViewController {
     
     func restart(){
         changeScreen(false)
+        skull1.alpha = DIM_ALPHA
+        skull2.alpha = DIM_ALPHA
+        skull3.alpha = DIM_ALPHA
         lifeloss = 0
         monsterHappy = false
-        timer.invalidate()
+        if timer != nil{
+            timer.invalidate()
+        }
     }
 
     @IBAction func onSnailTapped(btn: UIButton){
