@@ -18,6 +18,7 @@
 		0580D0CD1E272BF200D68327 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0C81E272BF200D68327 /* heart.wav */; };
 		0580D0CE1E272BF200D68327 /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0C91E272BF200D68327 /* skull.wav */; };
 		0580D0D01E272F1E00D68327 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0CF1E272F1E00D68327 /* Minecraft.ttf */; };
+		05CA82401E277DB700104432 /* DragImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CA823F1E277DB700104432 /* DragImg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0580D0C81E272BF200D68327 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
 		0580D0C91E272BF200D68327 /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skull.wav; sourceTree = "<group>"; };
 		0580D0CF1E272F1E00D68327 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
+		05CA823F1E277DB700104432 /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				0580D0BA1E272A6A00D68327 /* Assets.xcassets */,
 				0580D0BC1E272A6A00D68327 /* LaunchScreen.storyboard */,
 				0580D0BF1E272A6A00D68327 /* Info.plist */,
+				05CA823F1E277DB700104432 /* DragImg.swift */,
 			);
 			path = Gigapet;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CA82401E277DB700104432 /* DragImg.swift in Sources */,
 				0580D0B31E272A6A00D68327 /* ViewController.swift in Sources */,
 				0580D0B11E272A6A00D68327 /* AppDelegate.swift in Sources */,
 			);
@@ -312,6 +316,7 @@
 				0580D0C41E272A6A00D68327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

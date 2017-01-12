@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var skull2: UIImageView!
     @IBOutlet weak var skull3: UIImageView!
     @IBOutlet weak var livepanel: UIImageView!
-    @IBOutlet weak var heart: UIImageView!
-    @IBOutlet weak var food: UIImageView!
-    @IBOutlet weak var book: UIImageView!
+    @IBOutlet weak var heart: DragImg!
+    @IBOutlet weak var food: DragImg!
+    @IBOutlet weak var book: DragImg!
     
     var soundEff:AVAudioPlayer!
     var biteSound:AVAudioPlayer!
@@ -48,18 +48,32 @@ class ViewController: UIViewController {
         } catch let err as NSError{
             print(err.description)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.characterHappy), name: "onTargetDropped", object: nil)
+    }
+    
+    func characterHappy(){
+        
     }
 
     @IBAction func onSnailTapped(btn: UIButton){
         characterImg.image = UIImage(named: "blue_idle1")
         food.image = UIImage(named: "fruit")
+        addTarget()
         changeScreen()
     }
     
     @IBAction func onGolemTapped(btn: UIButton){
         characterImg.image = UIImage(named: "idle1")
         food.image = UIImage(named: "food")
+        addTarget()
         changeScreen()
+    }
+    
+    func addTarget(){
+        heart.target = characterImg
+        food.target = characterImg
+        book.target = characterImg
     }
     
     func changeScreen(){
