@@ -34,7 +34,7 @@ class MonsterImg: UIImageView {
     }
     
     func playDead(){
-        self.image = UIImage(named: "\(characterName)_dead1")
+        self.image = UIImage(named: "\(characterName)_dead5")
         var imgArray = [UIImage]()
         for(var i = 1; i<=5; i+=1){
             imgArray.append(UIImage(named: "\(characterName)_dead\(i)")!)
@@ -44,8 +44,6 @@ class MonsterImg: UIImageView {
         self.animationRepeatCount = 1
         self.animationDuration = 0.8
         self.startAnimating()
-        self.image = UIImage(named: "\(characterName)_dead5")
-
     }
     
 }

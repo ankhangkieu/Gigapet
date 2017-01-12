@@ -59,12 +59,25 @@ class ViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.characterHappy), name: "onTargetDropped", object: nil)
         restart()
     }
+  
+    func restart(){
+        changeScreen(false)
+        prepareNewGame()
+        skull1.alpha = DIM_ALPHA
+        skull2.alpha = DIM_ALPHA
+        skull3.alpha = DIM_ALPHA
+        lifeloss = 0
+        monsterHappy = false
+        if timer != nil{
+            timer.invalidate()
+        }
+    }
     
     func startTimer(){
         if timer != nil{
             timer.invalidate()
         }
-        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
     }
   
     func characterHappy(){
@@ -96,6 +109,10 @@ class ViewController: UIViewController {
                 timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.restart), userInfo: nil, repeats: false)
             }
         }
+        prepareNewGame()
+    }
+    
+    func prepareNewGame(){
         let rand = arc4random_uniform(3)
         dimNeeds()
         if rand == 0{
@@ -112,7 +129,7 @@ class ViewController: UIViewController {
         }
         monsterHappy = false
     }
-    
+
     func dimNeeds(){
         food.alpha = DIM_ALPHA
         food.userInteractionEnabled = false
@@ -122,18 +139,6 @@ class ViewController: UIViewController {
         book.userInteractionEnabled = false
     }
     
-    func restart(){
-        changeScreen(false)
-        skull1.alpha = DIM_ALPHA
-        skull2.alpha = DIM_ALPHA
-        skull3.alpha = DIM_ALPHA
-        lifeloss = 0
-        monsterHappy = false
-        if timer != nil{
-            timer.invalidate()
-        }
-    }
-
     @IBAction func onSnailTapped(btn: UIButton){
         characterImg.characterName = "blue"
         characterImg.playIdle()
