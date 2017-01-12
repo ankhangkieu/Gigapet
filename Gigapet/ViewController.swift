@@ -10,14 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logo: UILabel!
+    @IBOutlet weak var snailChoice: UIButton!
+    @IBOutlet weak var golemChoice: UIButton!
+    @IBOutlet weak var prompt: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
 
