@@ -4,6 +4,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Minecraft.ttf">
+            <string>Minecraft</string>
+            <string>Minecraft</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -20,18 +26,58 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="oum-Gg-HuG">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyK-bs-3CD">
-                                <rect key="frame" x="236" y="216" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GIGAPET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-Hu-aAS">
+                                <rect key="frame" x="206" y="20" width="189" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="RcN-2p-lyT"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ss1-UF-iAy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="F5h-FF-8ol">
+                                <rect key="frame" x="174" y="80" width="252" height="425"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-ZQ-Tsm">
+                                        <rect key="frame" x="14" y="0.0" width="225" height="300"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxa-vK-X1K">
+                                                <rect key="frame" x="0.0" y="0.0" width="225" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="225" id="Nir-Jf-Q57"/>
+                                                    <constraint firstAttribute="height" constant="150" id="kZV-Pz-GPp"/>
+                                                </constraints>
+                                                <state key="normal" image="blue_idle (1)"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-sF-GWh">
+                                                <rect key="frame" x="0.0" y="150" width="225" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="2Zq-vb-tYQ"/>
+                                                    <constraint firstAttribute="width" constant="225" id="Z12-1a-OYB"/>
+                                                </constraints>
+                                                <state key="normal" image="idle (1)"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE YOUR PET" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eha-mW-E2Y">
+                                        <rect key="frame" x="0.0" y="400" width="252" height="25"/>
+                                        <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="25"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oum-Gg-HuG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AoC-MZ-ngG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oum-Gg-HuG" secondAttribute="bottom" id="E2t-2m-ian"/>
+                            <constraint firstItem="F5h-FF-8ol" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GCJ-yy-lib"/>
+                            <constraint firstItem="Qca-Hu-aAS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUG-so-DeN"/>
+                            <constraint firstItem="Qca-Hu-aAS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="bA5-5b-8Yo"/>
                             <constraint firstAttribute="trailing" secondItem="oum-Gg-HuG" secondAttribute="trailing" id="c5P-Y1-WOM"/>
+                            <constraint firstItem="F5h-FF-8ol" firstAttribute="top" secondItem="Qca-Hu-aAS" secondAttribute="bottom" constant="8" id="kv3-75-MqK"/>
                             <constraint firstItem="oum-Gg-HuG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vwU-Nj-Xjw"/>
                         </constraints>
                     </view>
@@ -43,5 +89,7 @@
     </scenes>
     <resources>
         <image name="bg" width="768" height="1024"/>
+        <image name="blue_idle (1)" width="239" height="159"/>
+        <image name="idle (1)" width="889" height="615"/>
     </resources>
 </document>

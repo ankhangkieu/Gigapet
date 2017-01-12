@@ -10,7 +10,6 @@
 		0580D0B11E272A6A00D68327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580D0B01E272A6A00D68327 /* AppDelegate.swift */; };
 		0580D0B31E272A6A00D68327 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580D0B21E272A6A00D68327 /* ViewController.swift */; };
 		0580D0B61E272A6A00D68327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0B41E272A6A00D68327 /* Main.storyboard */; };
-		0580D0B91E272A6A00D68327 /* Gigapet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0580D0B71E272A6A00D68327 /* Gigapet.xcdatamodeld */; };
 		0580D0BB1E272A6A00D68327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0BA1E272A6A00D68327 /* Assets.xcassets */; };
 		0580D0BE1E272A6A00D68327 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0BC1E272A6A00D68327 /* LaunchScreen.storyboard */; };
 		0580D0CA1E272BF200D68327 /* bite.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0580D0C51E272BF200D68327 /* bite.wav */; };
@@ -26,7 +25,6 @@
 		0580D0B01E272A6A00D68327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0580D0B21E272A6A00D68327 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0580D0B51E272A6A00D68327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0580D0B81E272A6A00D68327 /* Gigapet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gigapet.xcdatamodel; sourceTree = "<group>"; };
 		0580D0BA1E272A6A00D68327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0580D0BD1E272A6A00D68327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0580D0BF1E272A6A00D68327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				0580D0BA1E272A6A00D68327 /* Assets.xcassets */,
 				0580D0BC1E272A6A00D68327 /* LaunchScreen.storyboard */,
 				0580D0BF1E272A6A00D68327 /* Info.plist */,
-				0580D0B71E272A6A00D68327 /* Gigapet.xcdatamodeld */,
 			);
 			path = Gigapet;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 			files = (
 				0580D0B31E272A6A00D68327 /* ViewController.swift in Sources */,
 				0580D0B11E272A6A00D68327 /* AppDelegate.swift in Sources */,
-				0580D0B91E272A6A00D68327 /* Gigapet.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,19 +314,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0580D0B71E272A6A00D68327 /* Gigapet.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0580D0B81E272A6A00D68327 /* Gigapet.xcdatamodel */,
-			);
-			currentVersion = 0580D0B81E272A6A00D68327 /* Gigapet.xcdatamodel */;
-			path = Gigapet.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0580D0A51E272A6A00D68327 /* Project object */;
 }
