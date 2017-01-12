@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var prompt: UILabel!
     
     @IBOutlet weak var ground: UIImageView!
-    @IBOutlet weak var characterImg: UIImageView!
+    @IBOutlet weak var characterImg: MonsterImg!
     @IBOutlet weak var skull1: UIImageView!
     @IBOutlet weak var skull2: UIImageView!
     @IBOutlet weak var skull3: UIImageView!
@@ -57,14 +57,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onSnailTapped(btn: UIButton){
-        characterImg.image = UIImage(named: "blue_idle1")
+        characterImg.characterName = "blue"
+        characterImg.playIdle()
         food.image = UIImage(named: "fruit")
         addTarget()
         changeScreen()
     }
     
     @IBAction func onGolemTapped(btn: UIButton){
-        characterImg.image = UIImage(named: "idle1")
+        characterImg.characterName = "golem"
+        characterImg.playIdle()
         food.image = UIImage(named: "food")
         addTarget()
         changeScreen()
