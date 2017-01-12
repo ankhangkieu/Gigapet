@@ -30,7 +30,14 @@ class ViewController: UIViewController {
     var biteSound:AVAudioPlayer!
     var deathSound:AVAudioPlayer!
     var skullSound:AVAudioPlayer!
-
+    
+    let DIM_ALPHA:CGFloat = 0.2
+    let OPAGUE:CGFloat = 1.0
+    let MAXLIFE = 3
+    var lifeloss = 0
+    var monsterHappy: Bool = false
+    var timer:NSTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -52,8 +59,67 @@ class ViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.characterHappy), name: "onTargetDropped", object: nil)
     }
     
+    func startTimer(){
+        if timer != nil{
+            timer.invalidate()
+        }
+        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
+    }
+  
     func characterHappy(){
-        
+        monsterHappy = true
+        startTimer()
+        biteSound.play()
+        dimNeeds()
+    }
+    
+    func changeGameState(){
+        if !monsterHappy{
+            lifeloss += 1
+            if lifeloss == 1{
+                skull1.alpha = OPAGUE
+            }
+            else if lifeloss == 2{
+                skull2.alpha = OPAGUE
+            }
+            else if lifeloss == 3{
+                skull3.alpha = OPAGUE
+            }
+            if lifeloss >= MAXLIFE{
+                restart()
+            }
+        }
+        let rand = arc4random_uniform(3)
+        dimNeeds()
+        if rand == 0{
+            heart.alpha = OPAGUE
+            heart.userInteractionEnabled = true
+        }
+        else if rand == 1{
+            food.alpha = OPAGUE
+            food.userInteractionEnabled = true
+        }
+        else{
+            book.alpha = OPAGUE
+            book.userInteractionEnabled = true
+        }
+        monsterHappy = false
+    }
+    
+    func dimNeeds(){
+        food.alpha = DIM_ALPHA
+        food.userInteractionEnabled = false
+        heart.alpha = DIM_ALPHA
+        heart.userInteractionEnabled = false
+        book.alpha = DIM_ALPHA
+        book.userInteractionEnabled = false
+    }
+    
+    func restart(){
+        changeScreen(false)
+        lifeloss = 0
+        monsterHappy = false
+        timer.invalidate()
     }
 
     @IBAction func onSnailTapped(btn: UIButton){
@@ -61,7 +127,8 @@ class ViewController: UIViewController {
         characterImg.playIdle()
         food.image = UIImage(named: "fruit")
         addTarget()
-        changeScreen()
+        changeScreen(true)
+        startTimer()
     }
     
     @IBAction func onGolemTapped(btn: UIButton){
@@ -69,7 +136,8 @@ class ViewController: UIViewController {
         characterImg.playIdle()
         food.image = UIImage(named: "food")
         addTarget()
-        changeScreen()
+        changeScreen(true)
+        startTimer()
     }
     
     func addTarget(){
@@ -78,21 +146,21 @@ class ViewController: UIViewController {
         book.target = characterImg
     }
     
-    func changeScreen(){
-        logo.hidden = true
-        snailChoice.hidden = true
-        golemChoice.hidden = true
-        prompt.hidden = true
+    func changeScreen(gameStart: Bool){
+        logo.hidden = gameStart
+        snailChoice.hidden = gameStart
+        golemChoice.hidden = gameStart
+        prompt.hidden = gameStart
         
-        ground.hidden = false
-        characterImg.hidden = false
-        skull1.hidden = false
-        skull2.hidden = false
-        skull3.hidden = false
-        livepanel.hidden = false
-        heart.hidden = false
-        food.hidden = false
-        book.hidden = false
+        ground.hidden = !gameStart
+        characterImg.hidden = !gameStart
+        skull1.hidden = !gameStart
+        skull2.hidden = !gameStart
+        skull3.hidden = !gameStart
+        livepanel.hidden = !gameStart
+        heart.hidden = !gameStart
+        food.hidden = !gameStart
+        book.hidden = !gameStart
     }
 }
 
