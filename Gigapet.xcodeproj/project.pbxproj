@@ -51,6 +51,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		055353431E29BB6F00863C9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0580D0B21E272A6A00D68327 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		055353441E29BB9600863C9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0518F5F11E27892500AE4AE3 /* MonsterImg.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		055353451E29BB9F00863C9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05CA823F1E277DB700104432 /* DragImg.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		0580D0A41E272A6A00D68327 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +94,9 @@
 		0580D0AF1E272A6A00D68327 /* Gigapet */ = {
 			isa = PBXGroup;
 			children = (
+				055353451E29BB9F00863C9F /* View */,
+				055353441E29BB9600863C9F /* Model */,
+				055353431E29BB6F00863C9F /* Controller */,
 				0580D0CF1E272F1E00D68327 /* Minecraft.ttf */,
 				0580D0C51E272BF200D68327 /* bite.wav */,
 				0580D0C61E272BF200D68327 /* cave-music.mp3 */,
@@ -77,13 +104,10 @@
 				0580D0C81E272BF200D68327 /* heart.wav */,
 				0580D0C91E272BF200D68327 /* skull.wav */,
 				0580D0B01E272A6A00D68327 /* AppDelegate.swift */,
-				0580D0B21E272A6A00D68327 /* ViewController.swift */,
 				0580D0B41E272A6A00D68327 /* Main.storyboard */,
 				0580D0BA1E272A6A00D68327 /* Assets.xcassets */,
 				0580D0BC1E272A6A00D68327 /* LaunchScreen.storyboard */,
 				0580D0BF1E272A6A00D68327 /* Info.plist */,
-				05CA823F1E277DB700104432 /* DragImg.swift */,
-				0518F5F11E27892500AE4AE3 /* MonsterImg.swift */,
 			);
 			path = Gigapet;
 			sourceTree = "<group>";
